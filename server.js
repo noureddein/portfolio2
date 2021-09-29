@@ -30,33 +30,30 @@ app.use(express.static('imgs'));
 
 
 app.get('/', homePage);
-// app.post('/sendEmail', sendEmail)
+app.post('/sendEmail', sendEmail)
 // app.get('/res', resp)
 // function resp(res, req) {
 //   (res.json({ response: true }))
 // }
 
-app.post('/sendEmail', (req, res) => {
-  const { name, senderEmail, subject, message } = req.body
-  console.log('Data:', req.body)
-  sendMail(name, senderEmail, subject, message, function (err, data) {
-    if (err) {
-      console.log(err)
-      res.json({ message: false })
-    } else {
-      res.json({ message: true })
-    }
-  })
+// app.post('/sendEmail', (req, res) => {
+//   const { name, senderEmail, subject, message } = req.body
+//   console.log('Data:', req.body)
+//   sendMail(name, senderEmail, subject, message, function (err, data) {
+//     if (err) {
+//       console.log(err)
+//       res.json({ message: false })
+//     } else {
+//       res.json({ message: true })
+//     }
+//   })
 
-})
+// })
 
 function homePage(req, res) {
   res.render('index')
 }
 
-// app.get('/sendEmail', (req, res) => {
-//   console.log(req, res)
-// })
 
 
 //! ===== Send Email ===========
@@ -102,9 +99,12 @@ function sendEmail(req, res) {
       transporter.sendMail(mailOption, function (err, info) {
         if (err) {
           console.log('Error: ', err)
+          res.json({ message: false })
+
         } else {
           console.log('Email Sent: ', info)
-          res.redirect('/res')
+          res.json({ message: true })
+
         }
       })
 
