@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer')
 const { google } = require('googleapis')
 const OAuth2 = google.auth.OAuth2
 const swal = require('sweetalert')
-
+const http = require('http')
 
 // ======= ENV =============
 const PORT = process.env.PORT
@@ -31,6 +31,7 @@ app.use(express.static('imgs'));
 
 app.get('/', homePage);
 app.post('/sendEmail', sendEmail)
+app.get('/download-CV', download)
 // app.get('/res', resp)
 // function resp(res, req) {
 //   (res.json({ response: true }))
@@ -50,11 +51,11 @@ app.post('/sendEmail', sendEmail)
 
 // })
 
+//! ===== Loading Home Page ===========
+
 function homePage(req, res) {
   res.render('index')
 }
-
-
 
 //! ===== Send Email ===========
 
@@ -112,6 +113,11 @@ function sendEmail(req, res) {
     .catch(error => console.log(error))
 }
 
+//! ===== Download the CV ===========
+
+function download(req, res) {
+  res.download(__dirname + '/files/CV-V2.0.docx' ,'CV-V2.0.docx')
+}
 
 
 
