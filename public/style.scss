@@ -27,6 +27,7 @@ header {
         justify-content: space-between;
         padding: 2% 8%;
         transition: all 0.5s;
+
         h1 {
             font-size: 32px;
             color: #fff;
@@ -35,6 +36,12 @@ header {
             color: brown;
         }
         .page-content {
+            label {
+                display: none;
+            }
+            #toggler {
+                display: none;
+            }
             ul {
                 left: 15rem;
                 display: flex;
@@ -190,15 +197,12 @@ main {
 
     .skills {
         background-color: black;
-        // margin: 6rem 0;
-        // padding: 0 4rem;
         color: #fff;
         padding: 3% 8%;
         .skills-content {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
             .skills-description {
                 width: 50%;
                 padding-right: 4%;

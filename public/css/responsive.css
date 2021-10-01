@@ -1,0 +1,59 @@
+@media (max-width: 900px) {
+  #header_page .page-content label {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+  }
+  #header_page .page-content ul {
+    display: none;
+    padding-right: 7rem;
+  }
+  #header_page .page-content #toggler:checked ~ ul {
+    display: block;
+  }
+
+  #about_me_page .about-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #about_me_page .about-content .column-left {
+    margin: auto;
+  }
+  #about_me_page .about-content .column-right {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  #skills_page .skills-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #skills_page .skills-content .skills-description {
+    width: 100%;
+  }
+  #skills_page .skills-content .skills-languages {
+    width: 100%;
+  }
+  #skills_page .skills-content .skills-languages ul li .data {
+    display: flex;
+    width: 100%;
+  }
+  #skills_page .skills-content .skills-languages ul li .loading .progress-bar {
+    width: 100%;
+  }
+
+  #contact_me_page .contact-me-section .container {
+    display: flex;
+    flex-direction: column;
+  }
+  #contact_me_page .contact-me-section .container .left-section {
+    width: 100%;
+  }
+  #contact_me_page .contact-me-section .container .right-section {
+    width: 100%;
+  }
+  #contact_me_page .contact-me-section .container .right-section button {
+    width: 50%;
+  }
+}
