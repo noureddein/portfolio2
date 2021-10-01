@@ -21,6 +21,9 @@
   #about_me_page .about-content .column-left {
     margin: auto;
   }
+  #about_me_page .about-content .column-left img {
+    width: 100%;
+  }
   #about_me_page .about-content .column-right {
     padding: 1rem;
     width: 100%;
