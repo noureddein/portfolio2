@@ -1,63 +1,71 @@
-<div class="title">
-  <div class="container">
-    <p class="text-1">Contact Me</p>
-    <p class="text-2">get in touch</p>
-  </div>
-</div>
-<section class="contact-me-section">
-  <div class="container">
-    <div class="left-section">
-      <div class="description">
-        <h2>Get in Touch</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus suscipit, quos expedita
-          mollitia
-          similique eveniet consequuntur quidem autem laboriosam blanditiis quia nostrum modi dicta aliquid
-          quas
-          quaerat
-          illo! Dolorem, ducimus?
-        </p>
-      </div>
-      <div class="my-info">
-        <div class="name">
-          <i class="fas fa-user"></i>
-          <div class="details">
-            <h4>Name</h4>
-            <h6>Nour Eddein Al Abassi</h6>
-          </div>
-        </div>
-        <div class="address">
-          <i class="fas fa-map-marker-alt"></i>
-          <div class="details">
-            <h4>Address</h4>
-            <h6>
-              Amman, Al Aqsa St, Near Prince Hamzah Hospital
-            </h6>
-          </div>
-        </div>
-        <div class="email">
-          <i class="fas fa-envelope"></i>
-          <div class="details">
-            <h4>Email</h4>
-            <h6>noureddein@gmail.com</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="right-section">
-      <form action="sendEmail" method="POST" id="contact-me-form">
-        <fieldset>
-          <legend>Message me</legend>
-          <div>
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <input type="email" id="senderEmail" name="senderEmail" placeholder="Email" required>
-          </div>
-          <input type="text" id="subject" name="subject" placeholder="Subject" required>
-          <textarea type="text" id="message" name="message" class="message-area" placeholder="Message.."
-              required></textarea>
-          <button type="submit">Send a Message</button>
-        </fieldset>
-      </form>
+<div class="contact-me-container" id="contact_me_page">
+  <div class="title">
+    <div class="container">
+      <p class="text-1">Contact Me</p>
+      <p class="text-2">get in touch</p>
     </div>
   </div>
-</section>
+  <section class="contact-me-section">
+    <div class="container">
+      <div class="left-section">
+        <div class="description">
+          <h2>Get in Touch</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus suscipit, quos expedita
+            mollitia
+            similique eveniet consequuntur quidem autem laboriosam blanditiis quia nostrum modi dicta aliquid
+            quas
+            quaerat
+            illo! Dolorem, ducimus?
+          </p>
+        </div>
+        <div class="my-info">
+          <div class="name">
+            <div class="fas">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="details">
+              <h4>Name</h4>
+              <h6>Nour Eddein Al Abassi</h6>
+            </div>
+          </div>
+          <div class="address">
+            <div class="fas">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="details">
+              <h4>Address</h4>
+              <h6>
+                Amman, Al Aqsa St, Near Prince Hamzah Hospital
+              </h6>
+            </div>
+          </div>
+          <div class="email">
+            <div class="fas">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="details">
+              <h4>Email</h4>
+              <h6>noureddein@gmail.com</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <form action="sendEmail" method="POST" id="contact-me-form">
+          <fieldset>
+            <legend>Message me</legend>
+            <div>
+              <input type="text" id="name" name="name" placeholder="Name" required>
+              <input type="email" id="senderEmail" name="senderEmail" placeholder="Email" required>
+            </div>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            <textarea type="text" id="message" name="message" class="message-area" placeholder="Message.."
+                required></textarea>
+            <button type="submit">Send a Message</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+  <div>

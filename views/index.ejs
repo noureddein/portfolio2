@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/all-style-files.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
       crossorigin="anonymous" />
 </head>
 
 <body>
+  <div id="page_top"></div>
   <%- include('./partials/header') %>
     <main>
       <%- include('./partials/about-me') %>
@@ -20,9 +21,15 @@
           <%- include('./partials/projects') %>
             <%- include('./partials/contact-me') %>
     </main>
+
+
+
     <%- include('./partials/footer') %>
+      <a href="#page_top" class="BTT-button">
+        <i class="fas fa-chevron-circle-up"></i>
+      </a>
       <%- include('./partials/scripts') %>
-        <!-- !add the social media accounts -->
+
 </body>
 
 </html>

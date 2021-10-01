@@ -1,33 +1,25 @@
-'use strict'
+// =============================
+// ======= Loading Bar =========
+// =============================
 
 const percent = document.querySelectorAll('.percent')
 const progress = document.querySelectorAll('.progress')
-// let count = 0
-// let per = 0
+
 let delay = 10
-
-// let loading = setInterval(animate, delay)
-// function animate() {
-//   for (let j = 0; j < percent.length; j++) {
-//     for (let count = 1; count < 101; count++) {
-//       per = per + 6
-//       progress[j].style.width = per + 'px'
-//       percent[j].textContent = count + '%'
-//     }
-//     per = 0
-//   }
-//   clearInterval(loading)
-// }
-
+let count = 0
 progress.forEach(element => {
-    setTimeout(animate(element), 200)
+    let val = parsInteger(percent[count].innerHTML)
+    setTimeout(animate(element, val), 200)
+    count++
 });
 
-function animate(element) {
-    element.style.width = '70%'
+function animate(element, val) {
+    element.style.width = `${val}%`
 }
 
-// Convert String to number
+// ==========================================
+// ======= Convert String to number =========
+// ==========================================
 function parsInteger(text) {
     text.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
     return parseInt(text)
@@ -41,16 +33,22 @@ const about = document.querySelector('.about')
 const skills = document.querySelector('.skills')
 const contactMe = document.querySelector('.contactMe')
 const myProjects = document.querySelector('.myProjects')
+const backToTopButton = document.querySelector('.BTT-button')
 
 home.classList.add('active')
-
 window.onscroll = function () {
     let top = window.scrollY
-    // console.log(top)
+    console.log(top)
     if (top >= 20) {
         header.classList.add('active')
     } else {
         header.classList.remove('active')
+    }
+
+    if (top > 100) {
+        backToTopButton.classList.add('active')
+    } else {
+        backToTopButton.classList.remove('active')
     }
 
     if (top > 300) {
@@ -82,8 +80,9 @@ window.onscroll = function () {
         contactMe.classList.remove('active')
     }
 }
-
-// Slider 
+// ======================
+// ======= Slider =======
+// ======================
 const sliderContainer = document.querySelector('.projects')
 const rightSlider = document.querySelector('.right-slider')
 const leftSlider = document.querySelector('.left-slider')
@@ -114,8 +113,9 @@ const changeSlide = (direction) => {
     rightSlider.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
     leftSlider.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
 }
-
+// ======================
 // ======= Form =========
+// ======================
 const form = document.getElementById('contact-me-form')
 
 form.addEventListener('submit', function (e) {

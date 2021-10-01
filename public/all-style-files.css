@@ -771,4 +771,10 @@ footer .container .social-media a:hover {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
-/*# sourceMappingURL=style.css.map */
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  nav .home {
+    background-color: blue;
+  }
+}
+/*# sourceMappingURL=all-style-files.css.map */

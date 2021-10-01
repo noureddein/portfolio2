@@ -5,6 +5,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 .developer {
     color: brown;
 }
@@ -98,6 +102,7 @@ main {
             margin: 3rem 0;
             text-align: center;
             .text-1 {
+                padding-bottom: 5px;
                 position: relative;
                 text-align: center;
                 font-size: 40px;
@@ -130,50 +135,54 @@ main {
             }
         }
     }
-    .about-content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 8%;
-        .column-left {
-            img {
-                width: 400px;
-                height: 400px;
-                border-radius: 15px;
-            }
-        }
-        .column-right {
-            width: 55%;
+    .about-me {
+        padding: 3% 8%;
+
+        .about-content {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            .text {
-                margin: 0;
-                font-size: 25px;
-                font-weight: 600;
-                margin-bottom: 10px;
-            }
-            p {
-                text-align: justify;
-                font-family: "Poppins", sans-serif;
-                font-size: large;
-                font-weight: bolder;
-            }
-            div {
-                margin-top: 2.5rem;
-                a {
-                    font-size: 20px;
-                    text-decoration: none;
-                    color: #fff;
-                    background-color: brown;
-                    padding: 20px 40px;
-                    border-radius: 10px;
-                    transition: all 0.3s ease-in;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 8%;
+            .column-left {
+                img {
+                    width: 400px;
+                    height: 400px;
+                    border-radius: 15px;
                 }
-                a:hover {
-                    border: 2px solid brown;
-                    background-color: transparent;
-                    color: brown;
+            }
+            .column-right {
+                width: 55%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .text {
+                    margin: 0;
+                    font-size: 25px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+                p {
+                    text-align: justify;
+                    font-family: "Poppins", sans-serif;
+                    font-size: large;
+                    font-weight: bolder;
+                }
+                div {
+                    margin-top: 2.5rem;
+                    a {
+                        font-size: 20px;
+                        text-decoration: none;
+                        color: #fff;
+                        background-color: brown;
+                        padding: 20px 40px;
+                        border-radius: 10px;
+                        transition: all 0.3s ease-in;
+                    }
+                    a:hover {
+                        border: 2px solid brown;
+                        background-color: transparent;
+                        color: brown;
+                    }
                 }
             }
         }
@@ -181,7 +190,7 @@ main {
 
     .skills {
         background-color: black;
-        margin: 6rem 0;
+        // margin: 6rem 0;
         // padding: 0 4rem;
         color: #fff;
         padding: 3% 8%;
@@ -252,88 +261,89 @@ main {
         }
     }
 }
-
-.projects {
-    width: 100vw;
-    height: 70vh;
-    display: flex;
-    flex-direction: row;
-    z-index: 3;
-    position: relative;
-    overflow: hidden;
-    .container {
-        height: 100%;
-    }
-    .left-slider {
-        background: yellow;
-        height: 100%;
-        width: 35%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: transform 0.5s ease-in-out;
-        div {
+.projects_container {
+    padding: 3% 0%;
+    .projects {
+        width: 100vw;
+        height: 70vh;
+        display: flex;
+        flex-direction: row;
+        z-index: 3;
+        position: relative;
+        overflow: hidden;
+        .container {
             height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
         }
-    }
-    .right-slider {
-        background: blue;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 35%;
-        width: 65%;
-        transition: transform 0.5s ease-in-out;
-
-        div {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
+        .left-slider {
+            background: yellow;
             height: 100%;
-            width: 100%;
-        }
-    }
-
-    .action-buttons {
-        button {
+            width: 35%;
             position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.5s ease-in-out;
+            div {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+            }
+        }
+        .right-slider {
+            background: blue;
+            height: 100%;
+            position: absolute;
+            top: 0;
             left: 35%;
-            top: 50%;
-            border: none;
-            background-color: #fff;
-            color: #aaa;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 15px;
+            width: 65%;
+            transition: transform 0.5s ease-in-out;
+
+            div {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                height: 100%;
+                width: 100%;
+            }
         }
 
-        button:hover {
-            color: #222;
-        }
+        .action-buttons {
+            button {
+                position: absolute;
+                left: 35%;
+                top: 50%;
+                border: none;
+                background-color: #fff;
+                color: #aaa;
+                cursor: pointer;
+                font-size: 16px;
+                padding: 15px;
+            }
 
-        button:focus {
-            outline: none;
-        }
-        .down-button {
-            transform: translateX(-100%);
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-        }
+            button:hover {
+                color: #222;
+            }
 
-        .up-button {
-            transform: translateY(-100%);
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
+            button:focus {
+                outline: none;
+            }
+            .down-button {
+                transform: translateX(-100%);
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+
+            .up-button {
+                transform: translateY(-100%);
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
         }
     }
 }
-
 header {
     nav.active {
         opacity: 0.95;
@@ -401,92 +411,104 @@ header {
         }
     }
 }
+.contact-me-container {
+    padding: 3% 8%;
 
-.contact-me-section {
-    padding: 0 8%;
-    font-family: "Poppins", sans-serif;
-    .container {
-        display: flex;
-        flex-direction: row;
+    .contact-me-section {
+        padding: 0 8%;
+        font-family: "Poppins", sans-serif;
+        .container {
+            display: flex;
+            flex-direction: row;
 
-        .left-section {
-            width: 50%;
-            .description {
-                padding-right: 3rem;
-                p {
-                    padding: 20px 0 20px 10px;
-                    text-align: justify;
+            .left-section {
+                width: 50%;
+                .description {
+                    padding-right: 3rem;
+                    p {
+                        padding: 20px 0 20px 10px;
+                        text-align: justify;
+                    }
                 }
-            }
-            .my-info {
-                i {
-                    font-size: 30px;
-                    color: brown;
-                }
-                .name,
-                .address,
-                .email {
-                    display: flex;
-                    flex-direction: row;
-                    padding: 1rem 0;
-                    div {
-                        padding: 0 0 0 1.7rem;
-                        font-size: 20px;
+                .my-info {
+                    .fas {
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        i {
+                            height: 40px;
+                            width: 40px;
+                            font-size: 35px;
+                            color: brown;
+                        }
+                    }
+                    .name,
+                    .address,
+                    .email {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        .details {
+                            // align-items: center;
+                            font-size: 20px;
+                        }
                     }
                 }
             }
-        }
-        .right-section {
-            width: 50%;
-            fieldset {
-                display: flex;
-                flex-direction: column;
-                border: none;
-                legend {
-                    font-size: 24px;
-                    font-weight: bold;
-                }
-                div {
+            .right-section {
+                width: 50%;
+                fieldset {
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    input {
-                        width: 49%;
-                    }
-                }
-                input {
-                    font-size: 16px;
-                    height: 3rem;
-                    padding: 15px 15px;
-                    margin: 0.5rem 0rem;
-                    border-radius: 7px;
-                }
-                .message-area {
-                    height: 10rem;
-                    resize: none;
-                    padding: 15px;
-                    font-size: 16px;
-                    font-family: "Poppins", sans-serif;
-                    margin: 0.5rem 0rem;
-                    border-radius: 7px;
-                }
-                button {
-                    font-family: "Ubuntu", sans-serif;
-                    width: 30%;
-                    font-size: 18px;
-                    text-decoration: none;
-                    color: #fff;
-                    background-color: brown;
-                    padding: 15px;
-                    cursor: pointer;
-                    border-radius: 7px;
+                    flex-direction: column;
                     border: none;
-                }
-                button:hover {
-                    background-color: transparent;
-                    border: 2px brown solid;
-                    transition: all 0.3s ease;
-                    color: brown;
+                    legend {
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        input {
+                            width: 49%;
+                        }
+                    }
+                    input {
+                        font-size: 16px;
+                        height: 3rem;
+                        padding: 15px 15px;
+                        margin: 0.5rem 0rem;
+                        border-radius: 7px;
+                    }
+                    .message-area {
+                        height: 10rem;
+                        resize: none;
+                        padding: 15px;
+                        font-size: 16px;
+                        font-family: "Poppins", sans-serif;
+                        margin: 0.5rem 0rem;
+                        border-radius: 7px;
+                    }
+                    button {
+                        font-family: "Ubuntu", sans-serif;
+                        width: 35%;
+                        font-size: 18px;
+                        text-decoration: none;
+                        color: #fff;
+                        background-color: brown;
+                        padding: 15px;
+                        cursor: pointer;
+                        border-radius: 7px;
+                        border: none;
+                    }
+                    button:hover {
+                        background-color: transparent;
+                        border: 2px brown solid;
+                        transition: all 0.3s ease;
+                        color: brown;
+                    }
                 }
             }
         }
@@ -518,11 +540,11 @@ footer {
 
         .social-media {
             padding-left: 1rem;
-            a,
+
             i {
                 color: #fff;
                 opacity: 0.5;
-                font-size: 30px;
+                font-size: 22px;
                 padding: 0 5px;
             }
             a:hover {
@@ -531,4 +553,20 @@ footer {
             }
         }
     }
+}
+
+.BTT-button {
+    display: none;
+    color: brown;
+    font-size: 40px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 101;
+    transition: all 0.3s ease-in;
+}
+
+.BTT-button.active {
+    display: block;
+    transition: all 0.3s ease-in;
 }
