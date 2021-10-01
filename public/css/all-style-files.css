@@ -1,22 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&family=Ubuntu:ital,wght@0,300;0,500;1,700&display=swap");
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  #header_page {
+    position: relative;
+  }
+  #header_page nav {
+    padding: 4% 8%;
+  }
+  #header_page .intro-box {
+    padding-top: 25%;
+  }
   #header_page .page-content label {
+    position: absolute;
     display: block;
     cursor: pointer;
     color: #fff;
-    font-size: 20px;
+    font-size: 26px;
+    z-index: 999;
+    top: 28%;
+    right: 10%;
   }
   #header_page .page-content ul {
     display: none;
-    padding-right: 7rem;
   }
   #header_page .page-content #toggler:checked ~ ul {
-    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(56, 56, 56, 0.7);
+    transition: all 10s ease-in-out;
+    justify-content: center;
+    align-items: center;
   }
 
   #about_me_page .about-content {
     display: flex;
     flex-direction: column;
+    padding: 0 2%;
   }
   #about_me_page .about-content .column-left {
     margin: auto;
@@ -25,7 +48,6 @@
     width: 100%;
   }
   #about_me_page .about-content .column-right {
-    padding: 1rem;
     width: 100%;
   }
 
@@ -60,6 +82,17 @@
   #contact_me_page .contact-me-section .container .right-section button {
     width: 50%;
   }
+
+  footer .container {
+    background-color: blue;
+    padding: 5% 3%;
+    color: brown;
+  }
+
+  .BTT-button {
+    right: 40px;
+    bottom: 70px;
+  }
 }
 * {
   padding: 0;
@@ -69,6 +102,8 @@
 
 html {
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 }
 
 .developer {
@@ -119,8 +154,8 @@ header nav .page-content ul li a {
   color: #fff;
 }
 header .intro-box {
-  padding-top: 16%;
-  height: 28rem;
+  height: 100%;
+  padding-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,12 +238,12 @@ main .title .container .text-2::before {
 }
 main .about-me {
   padding: 3% 8%;
+  margin: 6% 0;
 }
 main .about-me .about-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 8%;
 }
 main .about-me .about-content .column-left img {
   width: 400px;
@@ -253,7 +288,7 @@ main .about-me .about-content .column-right div a:hover {
 main .skills {
   background-color: black;
   color: #fff;
-  padding: 3% 8%;
+  padding: 5% 8%;
 }
 main .skills .skills-content {
   display: flex;
@@ -453,9 +488,6 @@ header nav.active .page-content ul li a {
   transition: all 0.3s ease;
 }
 
-.contact-me-container {
-  padding: 3% 8%;
-}
 .contact-me-container .contact-me-section {
   padding: 0 8%;
   font-family: "Poppins", sans-serif;
@@ -596,8 +628,8 @@ footer .container .social-media a:hover {
   font-size: 40px;
   position: fixed;
   right: 20px;
-  bottom: 20px;
-  z-index: 101;
+  bottom: 70px;
+  z-index: 110;
   transition: all 0.3s ease-in;
 }
 

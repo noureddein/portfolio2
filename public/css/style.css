@@ -7,6 +7,8 @@
 
 html {
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 }
 
 .developer {
@@ -57,8 +59,8 @@ header nav .page-content ul li a {
   color: #fff;
 }
 header .intro-box {
-  padding-top: 16%;
-  height: 28rem;
+  height: 100%;
+  padding-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,12 +143,12 @@ main .title .container .text-2::before {
 }
 main .about-me {
   padding: 3% 8%;
+  margin: 6% 0;
 }
 main .about-me .about-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 8%;
 }
 main .about-me .about-content .column-left img {
   width: 400px;
@@ -191,7 +193,7 @@ main .about-me .about-content .column-right div a:hover {
 main .skills {
   background-color: black;
   color: #fff;
-  padding: 3% 8%;
+  padding: 5% 8%;
 }
 main .skills .skills-content {
   display: flex;
@@ -391,9 +393,6 @@ header nav.active .page-content ul li a {
   transition: all 0.3s ease;
 }
 
-.contact-me-container {
-  padding: 3% 8%;
-}
 .contact-me-container .contact-me-section {
   padding: 0 8%;
   font-family: "Poppins", sans-serif;
@@ -534,8 +533,8 @@ footer .container .social-media a:hover {
   font-size: 40px;
   position: fixed;
   right: 20px;
-  bottom: 20px;
-  z-index: 101;
+  bottom: 70px;
+  z-index: 110;
   transition: all 0.3s ease-in;
 }
 

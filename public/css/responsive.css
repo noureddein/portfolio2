@@ -1,21 +1,44 @@
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  #header_page {
+    position: relative;
+  }
+  #header_page nav {
+    padding: 4% 8%;
+  }
+  #header_page .intro-box {
+    padding-top: 25%;
+  }
   #header_page .page-content label {
+    position: absolute;
     display: block;
     cursor: pointer;
     color: #fff;
-    font-size: 20px;
+    font-size: 26px;
+    z-index: 999;
+    top: 28%;
+    right: 10%;
   }
   #header_page .page-content ul {
     display: none;
-    padding-right: 7rem;
   }
   #header_page .page-content #toggler:checked ~ ul {
-    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(56, 56, 56, 0.7);
+    transition: all 10s ease-in-out;
+    justify-content: center;
+    align-items: center;
   }
 
   #about_me_page .about-content {
     display: flex;
     flex-direction: column;
+    padding: 0 2%;
   }
   #about_me_page .about-content .column-left {
     margin: auto;
@@ -24,7 +47,6 @@
     width: 100%;
   }
   #about_me_page .about-content .column-right {
-    padding: 1rem;
     width: 100%;
   }
 
@@ -58,5 +80,16 @@
   }
   #contact_me_page .contact-me-section .container .right-section button {
     width: 50%;
+  }
+
+  footer .container {
+    background-color: blue;
+    padding: 5% 3%;
+    color: brown;
+  }
+
+  .BTT-button {
+    right: 40px;
+    bottom: 70px;
   }
 }

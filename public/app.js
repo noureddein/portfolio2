@@ -39,7 +39,7 @@ home.classList.add('active')
 window.onscroll = function () {
     let top = window.scrollY
     console.log(top)
-    if (top >= 20) {
+    if (top > 20) {
         header.classList.add('active')
     } else {
         header.classList.remove('active')
@@ -58,18 +58,18 @@ window.onscroll = function () {
         home.classList.add('active')
         about.classList.remove('active')
     }
-    if (top > 950) {
+    if (top > 1255) {
         home.classList.remove('active')
         about.classList.remove('active')
         skills.classList.add('active')
-    } else if (top < 950 && top > 500) {
+    } else if (top < 1255 && top > 500) {
         skills.classList.remove('active')
     }
 
-    if (top > 1550) {
+    if (top > 1886) {
         skills.classList.remove('active')
         myProjects.classList.add('active')
-    } else if (top < 1550) {
+    } else if (top < 1886) {
         myProjects.classList.remove('active')
     }
 
