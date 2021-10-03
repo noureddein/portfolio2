@@ -44,11 +44,13 @@ header {
             #toggler {
                 display: none;
             }
+
             ul {
                 left: 15rem;
                 display: flex;
                 flex-direction: row;
                 list-style-type: none;
+
                 li {
                     padding: 10px 14px;
                     font-size: 18px;
@@ -162,7 +164,7 @@ main {
                 width: 55%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-between;
                 .text {
                     margin: 0;
                     font-size: 25px;

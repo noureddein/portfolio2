@@ -1,4 +1,10 @@
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+  footer {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   #header_page {
     position: relative;
     nav {
@@ -24,92 +30,121 @@
         right: 10%;
       }
       ul {
-        display: none;
-      }
-      #toggler:checked ~ ul {
+        display: block;
         width: 100vw;
         height: 100vh;
         top: 0;
-        left: 0;
+        left: -100rem;
+        position: absolute;
+        background-color: rgb(26, 26, 26);
+        text-align: center;
+        transition: all 0.5s ease-in-out;
         display: flex;
         flex-direction: column;
-        position: absolute;
-        background-color: rgba(56, 56, 56, 0.7);
-        transition: all 10s ease-in-out;
         justify-content: center;
-        align-items: center;
+      }
+      #toggler:checked ~ ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 0;
+        transition: all 0.5s ease-in-out;
+        background-color: rgb(26, 26, 26);
       }
     }
   }
-
-  #about_me_page {
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      padding: 0 2%;
-      .column-left {
-        margin: auto;
-        img {
+  main {
+    #about_me_page {
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2%;
+        .column-left {
+          margin: auto;
+          img {
+            width: 100%;
+            object-fit: contain;
+            padding-bottom: 1.25rem;
+          }
+        }
+        .column-right {
           width: 100%;
+          .text {
+            padding: 1rem 0;
+            margin: 0;
+          }
+          p {
+            text-align: justify;
+            padding-bottom: 1rem;
+          }
+          div {
+            margin: 2rem 0;
+          }
         }
       }
-      .column-right {
-        // padding: 1rem;
-        width: 100%;
-      }
     }
-  }
 
-  #skills_page {
-    .skills-content {
-      display: flex;
-      flex-direction: column;
-      .skills-description {
-        width: 100%;
-      }
-      .skills-languages {
-        width: 100%;
-        ul {
-          li {
-            .data {
-              display: flex;
-              width: 100%;
-            }
-            .loading {
-              .progress-bar {
+    #skills_page {
+      .skills-content {
+        display: flex;
+        flex-direction: column;
+        .skills-description {
+          width: 100%;
+          .text {
+            margin: 0;
+          }
+          p {
+            padding: 2rem 0;
+          }
+        }
+        .skills-languages {
+          width: 100%;
+          padding: 0 0 2rem 0;
+          ul {
+            li {
+              .data {
+                display: flex;
                 width: 100%;
+              }
+              .loading {
+                .progress-bar {
+                  width: 100%;
+                }
               }
             }
           }
         }
       }
     }
-  }
 
-  #contact_me_page {
-    .contact-me-section {
-      .container {
-        display: flex;
-        flex-direction: column;
-        .left-section {
-          width: 100%;
-        }
-        .right-section {
-          width: 100%;
-          button {
-            width: 50%;
+    #contact_me_page {
+      .contact-me-section {
+        .container {
+          display: flex;
+          flex-direction: column;
+          .left-section {
+            width: 100%;
+            .description {
+              padding: 0;
+              p {
+                padding: 20px 0;
+              }
+            }
+            .my-info {
+              padding: 1rem 0 3rem 0;
+            }
+          }
+          .right-section {
+            width: 100%;
+            button {
+              width: 50%;
+            }
           }
         }
       }
     }
   }
-  footer {
-    .container {
-      background-color: blue;
-      padding: 5% 3%;
-      color: brown;
-    }
-  }
+
   .BTT-button {
     right: 40px;
     bottom: 70px;
