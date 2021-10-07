@@ -154,3 +154,16 @@ form.addEventListener('submit', function (e) {
 
 })
 
+// Typing animation script
+let typed = new Typed(".typing", {
+    strings: ['Web Developer', 'Civil Engineer'],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+})
+let typed_2 = new Typed(".typing-2", {
+    strings: ['Web Developer', 'Civil Engineer'],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+})

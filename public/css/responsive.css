@@ -119,8 +119,16 @@
   main #contact_me_page .contact-me-section .container .right-section {
     width: 100%;
   }
+  main #contact_me_page .contact-me-section .container .right-section fieldset div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  main #contact_me_page .contact-me-section .container .right-section fieldset div input {
+    width: 100%;
+  }
   main #contact_me_page .contact-me-section .container .right-section button {
-    width: 50%;
+    width: 60%;
   }
 
   .BTT-button {
