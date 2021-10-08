@@ -32,10 +32,6 @@ app.use(express.static('imgs'));
 app.get('/', homePage);
 app.post('/sendEmail', sendEmail)
 app.get('/download-CV', download)
-// app.get('/res', resp)
-// function resp(res, req) {
-//   (res.json({ response: true }))
-// }
 
 // app.post('/sendEmail', (req, res) => {
 //   const { name, senderEmail, subject, message } = req.body
@@ -77,11 +73,12 @@ function sendEmail(req, res) {
       user: EMAIL,
       clientId: CLIENT_ID,
       clientSecret: CLIENT_SECRET,
-      refreshToken: REFRESH_TOKEN
-      // accessToken: accessToken
+      refreshToken: REFRESH_TOKEN,
+      accessToken: accessToken
     }
   })
   console.log('==============>>>', senderEmail)
+  console.log('=============>>>>', accessToken)
   const mailOption = {
     from: `${req.body.name} <${req.body.senderEmail}>`,
     to: EMAIL,
@@ -116,7 +113,7 @@ function sendEmail(req, res) {
 //! ===== Download the CV ===========
 
 function download(req, res) {
-  res.download(__dirname + '/files/CV-V2.0.docx' ,'CV-V2.0.docx')
+  res.download(__dirname + '/files/CV-V2.0.docx', 'CV-V2.0.docx')
 }
 
 
