@@ -38,7 +38,6 @@ const backToTopButton = document.querySelector('.BTT-button')
 home.classList.add('active')
 window.onscroll = function () {
     let top = window.scrollY
-    console.log(top)
     if (top > 20) {
         header.classList.add('active')
     } else {
