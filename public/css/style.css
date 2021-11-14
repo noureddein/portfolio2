@@ -100,6 +100,7 @@ header .intro-box .intro a:hover {
 
 main {
   font-family: "Ubuntu", sans-serif;
+  overflow: hidden;
 }
 main .title {
   display: flex;
@@ -152,7 +153,6 @@ main .title.is-visible {
 main .about-me {
   padding: 3% 8%;
   margin: 6% 0;
-  overflow: hidden;
 }
 main .about-me .about-content {
   display: flex;
@@ -223,7 +223,6 @@ main .skills {
   background-color: black;
   color: #fff;
   padding: 5% 8%;
-  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transition: transform 2s 2s cubic-bezier(0, 1, 0.3, 1), opacity 2s 0.25s ease-out;
@@ -319,7 +318,6 @@ main .skills.is-visible {
   flex-direction: row;
   z-index: 3;
   position: relative;
-  overflow: hidden;
 }
 .projects_container .projects .container {
   height: 100%;
@@ -333,7 +331,6 @@ main .skills.is-visible {
   opacity: 0;
   transform: translateX(-70rem);
   transition: transform 0.5s ease-in-out;
-  overflow: hidden;
 }
 .projects_container .projects .left-slider div {
   height: 100%;
@@ -484,7 +481,6 @@ header nav.active .page-content ul li a {
 }
 .contact-me-container .contact-me-section .container .left-section {
   width: 50%;
-  overflow: hidden;
   transform: translateX(-70rem) rotate(-20deg);
   opacity: 0;
   transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
@@ -654,16 +650,36 @@ footer .container .social-media a:hover {
 
 .BTT-button {
   display: none;
-  color: brown;
+  color: #9e2a2c;
   font-size: 40px;
   position: fixed;
   right: 20px;
   bottom: 70px;
   z-index: 110;
-  transition: all 0.3s ease-in;
+  transition: transform 0.2s 0.25s cubic-bezier(0, 1, 0.3, 1);
+}
+
+.BTT-button:hover {
+  animation: colorize 2s linear infinite;
+  transform: scale(1.2);
 }
 
 .BTT-button.active {
   display: block;
   transition: all 0.3s ease-in;
+}
+
+@keyframes colorize {
+  0% {
+    color: #231557;
+  }
+  29% {
+    color: #44107a;
+  }
+  67% {
+    color: #ff1361;
+  }
+  100% {
+    color: #fff800;
+  }
 }
