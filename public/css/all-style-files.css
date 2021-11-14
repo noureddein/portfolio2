@@ -106,6 +106,9 @@ main .title {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
+  will-change: transform, opacity;
 }
 main .title .container {
   margin: 3rem 0;
@@ -143,14 +146,26 @@ main .title .container .text-2::before {
   top: calc(50% - 1.5px);
   left: -50px;
 }
+main .title.is-visible {
+  opacity: 1;
+}
 main .about-me {
   padding: 3% 8%;
   margin: 6% 0;
+  overflow: hidden;
 }
 main .about-me .about-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+main .about-me .about-content .column-left {
+  opacity: 0;
+  transform: translateY(4em) rotateZ(-5deg);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
+  max-width: 600px;
+  width: 90%;
+  will-change: transform, opacity;
 }
 main .about-me .about-content .column-left img {
   width: 400px;
@@ -158,11 +173,17 @@ main .about-me .about-content .column-left img {
   border-radius: 15px;
   box-shadow: 10px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+main .about-me .about-content .column-left.is-visible {
+  opacity: 1;
+  transform: rotateZ(-10deg);
+}
 main .about-me .about-content .column-right {
   width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity: 0;
+  transform: translateX(100rem);
 }
 main .about-me .about-content .column-right .text {
   margin: 0;
@@ -193,10 +214,19 @@ main .about-me .about-content .column-right div a:hover {
   background-color: transparent;
   color: brown;
 }
+main .about-me .about-content .column-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 3s 0.25s ease-out;
+}
 main .skills {
   background-color: black;
   color: #fff;
   padding: 5% 8%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 2s 2s cubic-bezier(0, 1, 0.3, 1), opacity 2s 0.25s ease-out;
 }
 main .skills .skills-content {
   display: flex;
@@ -206,6 +236,10 @@ main .skills .skills-content {
 main .skills .skills-content .skills-description {
   width: 50%;
   padding-right: 4%;
+  opacity: 0;
+  transform: translateX(-70rem);
+  transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
 }
 main .skills .skills-content .skills-description .text {
   margin: 0;
@@ -219,45 +253,61 @@ main .skills .skills-content .skills-description p {
   font-size: large;
   font-weight: bolder;
 }
-main .skills .skills-content .skills-languages {
-  width: 50%;
+main .skills .skills-content .skills-description.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
-main .skills .skills-content .skills-languages ul {
+main .skills .skills-languages {
+  width: 50%;
+  opacity: 0;
+  transform: translateX(70rem);
+  transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
+}
+main .skills .skills-languages ul {
   list-style-type: none;
 }
-main .skills .skills-content .skills-languages ul li {
+main .skills .skills-languages ul li {
   display: flex;
   flex-direction: column;
   padding: 5px 0;
 }
-main .skills .skills-content .skills-languages ul li .data {
+main .skills .skills-languages ul li .data {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-main .skills .skills-content .skills-languages ul li .loading {
+main .skills .skills-languages ul li .loading {
   padding-top: 5px;
   transform: translate(0%, 0%);
 }
-main .skills .skills-content .skills-languages ul li .loading .percent .percent {
+main .skills .skills-languages ul li .loading .percent .percent {
   color: #fdb5ca;
   font-size: 15px;
   font-weight: bold;
   line-height: 23px;
 }
-main .skills .skills-content .skills-languages ul li .loading .progress-bar {
+main .skills .skills-languages ul li .loading .progress-bar {
   width: 100%;
   height: 16px;
   padding: 3px;
   background: #fdfd;
   border-radius: 3px;
 }
-main .skills .skills-content .skills-languages ul li .loading .progress-bar .progress {
+main .skills .skills-languages ul li .loading .progress-bar .progress {
   width: 0px;
   transition: all 1s;
   height: 10px;
   background: #f60d54;
   border-radius: 3px;
+}
+main .skills .skills-languages.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+main .skills.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .projects_container {
@@ -280,7 +330,10 @@ main .skills .skills-content .skills-languages ul li .loading .progress-bar .pro
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transform: translateX(-70rem);
   transition: transform 0.5s ease-in-out;
+  overflow: hidden;
 }
 .projects_container .projects .left-slider div {
   height: 100%;
@@ -295,12 +348,18 @@ main .skills .skills-content .skills-languages ul li .loading .progress-bar .pro
 .projects_container .projects .left-slider div h4 {
   padding-bottom: 10px;
 }
+.projects_container .projects .left-slider.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 .projects_container .projects .right-slider {
   height: 100%;
   position: absolute;
   top: 0;
   left: 35%;
   width: 65%;
+  opacity: 0;
+  transform: translateX(70rem);
   transition: transform 0.5s ease-in-out;
 }
 .projects_container .projects .right-slider div {
@@ -309,6 +368,10 @@ main .skills .skills-content .skills-languages ul li .loading .progress-bar .pro
   background-position: center center;
   height: 100%;
   width: 100%;
+}
+.projects_container .projects .right-slider.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 .projects_container .projects .action-buttons button {
   position: absolute;
@@ -328,14 +391,28 @@ main .skills .skills-content .skills-languages ul li .loading .progress-bar .pro
   outline: none;
 }
 .projects_container .projects .action-buttons .down-button {
-  transform: translateX(-100%);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  opacity: 0;
+  transform: translateX(-70rem);
+  transition: transform 1s ease;
+}
+.projects_container .projects .action-buttons .down-button.is-visible {
+  opacity: 1;
+  transform: translateX(0rem);
+  transform: translateX(-100%);
 }
 .projects_container .projects .action-buttons .up-button {
-  transform: translateY(-100%);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  opacity: 0;
+  transform: translateX(70rem);
+  transition: transform 1s ease;
+}
+.projects_container .projects .action-buttons .up-button.is-visible {
+  opacity: 1;
+  transform: translateX(0rem);
+  transform: translateY(-100%);
 }
 
 header nav.active {
@@ -407,6 +484,11 @@ header nav.active .page-content ul li a {
 }
 .contact-me-container .contact-me-section .container .left-section {
   width: 50%;
+  overflow: hidden;
+  transform: translateX(-70rem) rotate(-20deg);
+  opacity: 0;
+  transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
+  will-change: transform, opacity;
 }
 .contact-me-container .contact-me-section .container .left-section .description {
   padding-right: 3rem;
@@ -443,8 +525,16 @@ header nav.active .page-content ul li a {
 .contact-me-container .contact-me-section .container .left-section .my-info .email .details {
   font-size: 20px;
 }
+.contact-me-container .contact-me-section .container .left-section.is-visible {
+  transform: translateX(0) rotate(0deg);
+  opacity: 1;
+}
 .contact-me-container .contact-me-section .container .right-section {
   width: 50%;
+  transform: translateX(70rem) rotate(20deg);
+  opacity: 0;
+  transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
+  will-change: transform, opacity;
 }
 .contact-me-container .contact-me-section .container .right-section fieldset {
   display: flex;
@@ -473,6 +563,10 @@ header nav.active .page-content ul li a {
   border: none;
   border-bottom: 1px solid brown;
 }
+.contact-me-container .contact-me-section .container .right-section fieldset input:hover,
+.contact-me-container .contact-me-section .container .right-section fieldset input:focus {
+  background-color: rgba(158, 42, 44, 0.1);
+}
 .contact-me-container .contact-me-section .container .right-section fieldset .message-area {
   height: 8rem;
   resize: none;
@@ -484,6 +578,10 @@ header nav.active .page-content ul li a {
   border: none;
   border-bottom: 1px solid brown;
   outline: none;
+}
+.contact-me-container .contact-me-section .container .right-section fieldset .message-area:hover,
+.contact-me-container .contact-me-section .container .right-section fieldset .message-area:focus {
+  background-color: rgba(158, 42, 44, 0.1);
 }
 .contact-me-container .contact-me-section .container .right-section fieldset button {
   font-family: "Ubuntu", sans-serif;
@@ -502,6 +600,10 @@ header nav.active .page-content ul li a {
   border: 2px brown solid;
   transition: all 0.3s ease;
   color: brown;
+}
+.contact-me-container .contact-me-section .container .right-section.is-visible {
+  transform: translateX(0) rotate(0deg);
+  opacity: 1;
 }
 
 footer {
@@ -534,10 +636,20 @@ footer .container .social-media i {
   opacity: 0.5;
   font-size: 22px;
   padding: 0 5px;
+  transition: 0.2s ease-in;
+}
+footer .container .social-media i:hover {
+  color: red;
+  transform: scale(2);
+}
+footer .container .social-media a {
+  transition: 0.2s ease-in;
 }
 footer .container .social-media a:hover {
   opacity: 1;
   color: #fff;
+  transform: scale(2);
+  padding: 0 20px;
 }
 
 .BTT-button {
