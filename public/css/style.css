@@ -264,7 +264,6 @@ main .skills .skills-content .skills-languages ul li .loading .progress-bar .pro
   padding: 3% 0%;
 }
 .projects_container .projects {
-  width: 100vw;
   height: 70vh;
   display: flex;
   flex-direction: row;
