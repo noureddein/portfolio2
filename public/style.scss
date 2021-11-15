@@ -329,6 +329,7 @@ main {
 .projects_container {
     padding: 3% 0%;
     .projects {
+        overflow: hidden;
         height: 70vh;
         display: flex;
         flex-direction: row;
@@ -344,8 +345,7 @@ main {
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0;
-            transform: translateX(-70rem);
+            opacity: 1;
             transition: transform 0.5s ease-in-out;
 
             div {
@@ -362,18 +362,14 @@ main {
                 }
             }
         }
-        .left-slider.is-visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+
         .right-slider {
             height: 100%;
+            width: 65%;
             position: absolute;
             top: 0;
             left: 35%;
-            width: 65%;
-            opacity: 0;
-            transform: translateX(70rem);
+            opacity: 1;
             transition: transform 0.5s ease-in-out;
 
             div {
@@ -382,11 +378,8 @@ main {
                 background-position: center center;
                 height: 100%;
                 width: 100%;
+                padding: 30px;
             }
-        }
-        .right-slider.is-visible {
-            opacity: 1;
-            transform: translateX(0);
         }
 
         .action-buttons {
@@ -693,7 +686,6 @@ footer {
 
 .BTT-button {
     display: none;
-    // color: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
     color: #9e2a2c;
     font-size: 40px;
     position: fixed;
