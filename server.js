@@ -33,20 +33,6 @@ app.get('/', homePage);
 app.post('/sendEmail', sendEmail)
 app.get('/download-CV', download)
 
-// app.post('/sendEmail', (req, res) => {
-//   const { name, senderEmail, subject, message } = req.body
-//   console.log('Data:', req.body)
-//   sendMail(name, senderEmail, subject, message, function (err, data) {
-//     if (err) {
-//       console.log(err)
-//       res.json({ message: false })
-//     } else {
-//       res.json({ message: true })
-//     }
-//   })
-
-// })
-
 //! ===== Loading Home Page ===========
 
 function homePage(req, res) {
@@ -102,10 +88,8 @@ function sendEmail(req, res) {
         } else {
           console.log('Email Sent: ', info)
           res.json({ message: true })
-
         }
       })
-
     )
     .catch(error => console.log(error))
 }
@@ -113,10 +97,8 @@ function sendEmail(req, res) {
 //! ===== Download the CV ===========
 
 function download(req, res) {
-  res.download(__dirname + '/files/CV-V2.0.docx', 'CV-V2.0.docx')
+  res.download(__dirname + '/files/CV_v3.2.pdf', 'CV_v3.2.pdf')
 }
-
-
 
 db.connect().then(() => {
   app.listen(PORT, () => console.log(`Listing to Port ${PORT}`));
