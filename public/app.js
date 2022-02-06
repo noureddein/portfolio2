@@ -169,11 +169,9 @@ let typed_2 = new Typed(".typing-2", {
 
 
 
-var scroll = window.requestAnimationFrame ||
-    function (callback) { window.setTimeout(callback, 1000 / 60) };
+var scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
 
 var elementsToShow = document.querySelectorAll('.show-on-scroll');
-console.log(elementsToShow)
 
 function loop() {
 
@@ -194,6 +192,7 @@ function isElementInViewport(el) {
         el = el[0];
     }
     var rect = el.getBoundingClientRect();
+    console.log(rect)
     return (
         (rect.top <= 0
             && rect.bottom >= 0)
