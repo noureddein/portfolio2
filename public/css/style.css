@@ -17,6 +17,7 @@ html {
 
 header {
   background-image: url("/josh-rose-trYl7JYATH0-unsplash.webp");
+  background-attachment: fixed;
   height: 100vh;
   background-size: cover;
   font-family: "Ubuntu", sans-serif;
@@ -68,8 +69,9 @@ header .intro-box {
   justify-content: center;
 }
 header .intro-box .intro {
-  padding-left: 8%;
+  padding: 8%;
   color: #fff;
+  overflow: hidden;
 }
 header .intro-box .intro .first-p {
   font-size: 28px;
@@ -77,6 +79,13 @@ header .intro-box .intro .first-p {
 header .intro-box .intro .second-p {
   font-size: 70px;
   font-weight: 900;
+  transform: translateY(180px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+header .intro-box .intro .second-p-isVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 header .intro-box .intro .third-p {
   font-size: 35px;
@@ -152,7 +161,7 @@ main .title.is-visible {
 }
 main .about-me {
   padding: 3% 8%;
-  margin: 6% 0;
+  margin: 5% 0;
 }
 main .about-me .about-content {
   display: flex;
@@ -161,10 +170,8 @@ main .about-me .about-content {
 }
 main .about-me .about-content .column-left {
   opacity: 0;
-  transform: translateY(4em) rotateZ(-5deg);
+  transform: translateY(4em);
   transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
-  max-width: 600px;
-  width: 90%;
   will-change: transform, opacity;
 }
 main .about-me .about-content .column-left img {
@@ -183,7 +190,7 @@ main .about-me .about-content .column-right {
   flex-direction: column;
   justify-content: center;
   opacity: 0;
-  transform: translateX(100rem);
+  transform: translateX(10rem);
 }
 main .about-me .about-content .column-right .text {
   margin: 0;
@@ -236,7 +243,7 @@ main .skills .skills-content .skills-description {
   width: 50%;
   padding-right: 4%;
   opacity: 0;
-  transform: translateX(-70rem);
+  transform: translateX(-20rem);
   transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
   will-change: transform, opacity;
 }
@@ -259,7 +266,7 @@ main .skills .skills-content .skills-description.is-visible {
 main .skills .skills-languages {
   width: 50%;
   opacity: 0;
-  transform: translateX(70rem);
+  transform: translateX(26rem);
   transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
   will-change: transform, opacity;
 }
@@ -383,7 +390,7 @@ main .skills.is-visible {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   opacity: 0;
-  transform: translateX(-70rem);
+  transform: translateX(-10rem);
   transition: transform 1s ease;
 }
 .projects_container .projects .action-buttons .down-button.is-visible {
@@ -395,7 +402,7 @@ main .skills.is-visible {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   opacity: 0;
-  transform: translateX(70rem);
+  transform: translateX(10rem);
   transition: transform 1s ease;
 }
 .projects_container .projects .action-buttons .up-button.is-visible {
@@ -432,31 +439,11 @@ header nav.active .page-content ul li a {
   color: #fff;
 }
 
-.page-content ul .home.active {
-  padding-bottom: 4px;
-  border-bottom: 4px #fff solid;
-  transition: all 0.3s ease;
-}
-.page-content ul .about.active {
-  padding-bottom: 4px;
-  border-bottom: 4px #fff solid;
-  transition: all 0.3s ease;
-}
-.page-content ul .skills.active {
-  padding-bottom: 4px;
-  border-bottom: 4px #fff solid;
-  transition: all 0.3s ease;
-}
-.page-content ul .contactMe.active {
-  padding-bottom: 4px;
-  border-bottom: 4px #fff solid;
-  transition: all 0.3s ease;
-}
-.page-content ul .myProjects.active {
-  padding-bottom: 4px;
-  border-bottom: 4px #fff solid;
-  transition: all 0.3s ease;
-}
+.page-content ul .home.active,
+.page-content ul .about.active,
+.page-content ul .skills.active,
+.page-content ul .contactMe.active,
+.page-content ul .myProjects.active,
 .page-content ul .contactMe.active {
   padding-bottom: 4px;
   border-bottom: 4px #fff solid;
@@ -473,7 +460,7 @@ header nav.active .page-content ul li a {
 }
 .contact-me-container .contact-me-section .container .left-section {
   width: 50%;
-  transform: translateX(-70rem) rotate(-20deg);
+  transform: translateX(-20rem) rotate(-20deg);
   opacity: 0;
   transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
   will-change: transform, opacity;
@@ -519,7 +506,7 @@ header nav.active .page-content ul li a {
 }
 .contact-me-container .contact-me-section .container .right-section {
   width: 50%;
-  transform: translateX(70rem) rotate(20deg);
+  transform: translateX(20rem) rotate(20deg);
   opacity: 0;
   transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
   will-change: transform, opacity;
@@ -674,4 +661,7 @@ footer .container .social-media a:hover {
   100% {
     color: #fff800;
   }
+}
+#skills_page {
+  border: 2px white solid;
 }

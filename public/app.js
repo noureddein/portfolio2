@@ -2,6 +2,7 @@
 // ======= Loading Bar =========
 // =============================
 
+
 const percent = document.querySelectorAll('.percent')
 const progress = document.querySelectorAll('.progress')
 
@@ -35,7 +36,47 @@ const contactMe = document.querySelector('.contactMe')
 const myProjects = document.querySelector('.myProjects')
 const backToTopButton = document.querySelector('.BTT-button')
 
-home.classList.add('active')
+const allSections = document.querySelectorAll('.section-container')
+
+// home.classList.add('active')
+
+const underLineNav = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            console.log(entry.target.id, entry.isIntersecting);
+            // (entry.target.id === 'about_me_page' && entry.isIntersecting)
+            //     ? about.classList.add('active')
+            //     : about.classList.remove('active');
+
+            // (entry.target.id === 'contact_me_page' && entry.isIntersecting)
+            //     ? contactMe.classList.add('active')
+            //     : contactMe.classList.remove('active');
+
+            (entry.target.id === 'skills_page' && entry.isIntersecting)
+                ? skills.classList.add('active')
+                : skills.classList.remove('active');
+
+            // (entry.target.id === 'projects_page' && entry.isIntersecting)
+            //     ? myProjects.classList.add('active')
+            //     : myProjects.classList.remove('active');
+
+
+
+            // (entry.target.id === 'header_page' && entry.isIntersecting)
+            //     ? home.classList.add('active')
+            //     : home.classList.remove('active');
+
+
+
+        })
+        console.log('=======');
+
+    }
+)
+
+allSections.forEach(item => underLineNav.observe(item))
+
+
 window.onscroll = function () {
     let top = window.scrollY
     if (top > 20) {
@@ -44,40 +85,40 @@ window.onscroll = function () {
         header.classList.remove('active')
     }
 
-    if (top > 100) {
-        backToTopButton.classList.add('active')
-    } else {
-        backToTopButton.classList.remove('active')
-    }
+    // if (top > 100) {
+    //     backToTopButton.classList.add('active')
+    // } else {
+    //     backToTopButton.classList.remove('active')
+    // }
 
-    if (top > 300) {
-        home.classList.remove('active')
-        about.classList.add('active')
-    } else if (top < 300) {
-        home.classList.add('active')
-        about.classList.remove('active')
-    }
-    if (top > 1255) {
-        home.classList.remove('active')
-        about.classList.remove('active')
-        skills.classList.add('active')
-    } else if (top < 1255 && top > 500) {
-        skills.classList.remove('active')
-    }
+    // if (top > 300) {
+    //     home.classList.remove('active')
+    //     about.classList.add('active')
+    // } else if (top < 300) {
+    //     home.classList.add('active')
+    //     about.classList.remove('active')
+    // }
+    // if (top > 1255) {
+    //     home.classList.remove('active')
+    //     about.classList.remove('active')
+    //     skills.classList.add('active')
+    // } else if (top < 1255 && top > 500) {
+    //     skills.classList.remove('active')
+    // }
 
-    if (top > 1886) {
-        skills.classList.remove('active')
-        myProjects.classList.add('active')
-    } else if (top < 1886) {
-        myProjects.classList.remove('active')
-    }
+    // if (top > 1886) {
+    //     skills.classList.remove('active')
+    //     myProjects.classList.add('active')
+    // } else if (top < 1886) {
+    //     myProjects.classList.remove('active')
+    // }
 
-    if (top > 2320) {
-        myProjects.classList.remove('active')
-        contactMe.classList.add('active')
-    } else {
-        contactMe.classList.remove('active')
-    }
+    // if (top > 2320) {
+    //     myProjects.classList.remove('active')
+    //     contactMe.classList.add('active')
+    // } else {
+    //     contactMe.classList.remove('active')
+    // }
 }
 // ======================
 // ======= Slider =======
@@ -153,7 +194,11 @@ form.addEventListener('submit', function (e) {
 
 })
 
-// Typing animation script
+
+// =========================================
+// ======= Typing animation script =========
+// =========================================
+
 let typed = new Typed(".typing", {
     strings: ['Web Developer', 'Civil Engineer'],
     typeSpeed: 100,
@@ -167,40 +212,30 @@ let typed_2 = new Typed(".typing-2", {
     loop: true
 })
 
+// =========================================
+// ======= adding animation =========
+// =========================================
 
 
-var scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
 
-var elementsToShow = document.querySelectorAll('.show-on-scroll');
+function playingAnimation(className, animation, numberOfElements = 1 || 'many') {
+    let elements
+    numberOfElements === 1 ?
+        elements = document.querySelector(className) :
+        elements = document.querySelectorAll(className)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle(animation, entry.isIntersecting)
+            if (entry.isIntersecting) observer.unobserve(entry.target)
+        })
+    }, { threshold: 0.5 })
 
-function loop() {
-
-    elementsToShow.forEach(function (element) {
-        if (isElementInViewport(element)) {
-            element.classList.add('is-visible');
-        } else {
-            element.classList.remove('is-visible');
-        }
-    });
-
-    scroll(loop);
+    numberOfElements === 1 ?
+        observer.observe(elements) :
+        elements.forEach(item => observer.observe(item))
 }
-loop();
 
-function isElementInViewport(el) {
-    if (typeof jQuery === "function" && el instanceof jQuery) {
-        el = el[0];
-    }
-    var rect = el.getBoundingClientRect();
-    console.log(rect)
-    return (
-        (rect.top <= 0
-            && rect.bottom >= 0)
-        ||
-        (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-        ||
-        (rect.top >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-    );
-}
+
+
+playingAnimation('.second-p', 'second-p-isVisible', 1)
+playingAnimation('.show-on-scroll', 'is-visible', 'many')

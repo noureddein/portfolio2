@@ -17,6 +17,7 @@ html {
 
 header {
     background-image: url("/josh-rose-trYl7JYATH0-unsplash.webp");
+    background-attachment: fixed;
     height: 100vh;
     background-size: cover;
     font-family: "Ubuntu", sans-serif;
@@ -71,15 +72,24 @@ header {
         flex-direction: column;
         justify-content: center;
         .intro {
-            padding-left: 8%;
+            padding: 8%;
             color: #fff;
+            overflow: hidden;
             .first-p {
                 font-size: 28px;
             }
             .second-p {
                 font-size: 70px;
                 font-weight: 900;
+                transform: translateY(180px);
+                opacity: 0;
+                transition: all 1s ease-in-out;
             }
+            .second-p-isVisible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
             .third-p {
                 font-size: 35px;
                 margin: 12px 0 30px 0;
@@ -157,7 +167,7 @@ main {
     }
     .about-me {
         padding: 3% 8%;
-        margin: 6% 0;
+        margin: 5% 0;
 
         .about-content {
             display: flex;
@@ -165,10 +175,10 @@ main {
             justify-content: space-between;
             .column-left {
                 opacity: 0;
-                transform: translateY(4em) rotateZ(-5deg);
+                transform: translateY(4em);
                 transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
-                max-width: 600px;
-                width: 90%;
+                // max-width: 600px;
+                // width: 90%;
                 will-change: transform, opacity;
 
                 img {
@@ -188,7 +198,7 @@ main {
                 flex-direction: column;
                 justify-content: center;
                 opacity: 0;
-                transform: translateX(100rem);
+                transform: translateX(10rem);
 
                 .text {
                     margin: 0;
@@ -232,7 +242,6 @@ main {
         background-color: black;
         color: #fff;
         padding: 5% 8%;
-
         opacity: 0;
         visibility: hidden;
         transition: transform 2s 2s cubic-bezier(0, 1, 0.3, 1), opacity 2s 0.25s ease-out;
@@ -246,7 +255,7 @@ main {
                 width: 50%;
                 padding-right: 4%;
                 opacity: 0;
-                transform: translateX(-70rem);
+                transform: translateX(-20rem);
                 transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
                 will-change: transform, opacity;
 
@@ -271,7 +280,7 @@ main {
         .skills-languages {
             width: 50%;
             opacity: 0;
-            transform: translateX(70rem);
+            transform: translateX(26rem);
             transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
             will-change: transform, opacity;
 
@@ -406,7 +415,7 @@ main {
                 border-top-left-radius: 15px;
                 border-bottom-left-radius: 15px;
                 opacity: 0;
-                transform: translateX(-70rem);
+                transform: translateX(-10rem);
                 transition: transform 1s ease;
             }
             .down-button.is-visible {
@@ -419,7 +428,7 @@ main {
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
                 opacity: 0;
-                transform: translateX(70rem);
+                transform: translateX(10rem);
                 transition: transform 1s ease;
             }
             .up-button.is-visible {
@@ -465,31 +474,11 @@ header {
 
 .page-content {
     ul {
-        .home.active {
-            padding-bottom: 4px;
-            border-bottom: 4px #fff solid;
-            transition: all 0.3s ease;
-        }
-        .about.active {
-            padding-bottom: 4px;
-            border-bottom: 4px #fff solid;
-            transition: all 0.3s ease;
-        }
-        .skills.active {
-            padding-bottom: 4px;
-            border-bottom: 4px #fff solid;
-            transition: all 0.3s ease;
-        }
-        .contactMe.active {
-            padding-bottom: 4px;
-            border-bottom: 4px #fff solid;
-            transition: all 0.3s ease;
-        }
-        .myProjects.active {
-            padding-bottom: 4px;
-            border-bottom: 4px #fff solid;
-            transition: all 0.3s ease;
-        }
+        .home.active,
+        .about.active,
+        .skills.active,
+        .contactMe.active,
+        .myProjects.active,
         .contactMe.active {
             padding-bottom: 4px;
             border-bottom: 4px #fff solid;
@@ -507,7 +496,7 @@ header {
 
             .left-section {
                 width: 50%;
-                transform: translateX(-70rem) rotate(-20deg);
+                transform: translateX(-20rem) rotate(-20deg);
                 opacity: 0;
                 transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
                 will-change: transform, opacity;
@@ -555,8 +544,7 @@ header {
             }
             .right-section {
                 width: 50%;
-
-                transform: translateX(70rem) rotate(20deg);
+                transform: translateX(20rem) rotate(20deg);
                 opacity: 0;
                 transition: transform 1s 0.5s cubic-bezier(0, 1, 0.3, 1), opacity 1s 0.25s ease-out;
                 will-change: transform, opacity;
@@ -717,4 +705,8 @@ footer {
     100% {
         color: #fff800;
     }
+}
+
+#skills_page {
+    border: 2px white solid;
 }
